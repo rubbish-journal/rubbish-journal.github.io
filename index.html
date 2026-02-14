@@ -3,199 +3,142 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RUBBISH — A Journal of Abandoned Scholarly Endeavours</title>
+<title>RUBBISH — Journal of Waste &amp; Circular Economy</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#fafaf8;--text:#1a1a1a;--accent:#8b0000;--gray:#666;--light:#e8e6e1;--card:#fff;--border:#d4d0c8}
-body{font-family:'Times New Roman',Georgia,serif;background:var(--bg);color:var(--text);line-height:1.7}
-a{color:var(--accent);text-decoration:none;transition:opacity .2s}
-a:hover{opacity:.7}
+:root{--bg:#f5f9f4;--text:#1a2e1a;--accent:#3d6b35;--accent2:#4a8a3f;--dark:#1c2e1a;--gray:#5a6e5a;--light:#e2ede0;--card:#fff;--border:#c5d8c0;--hero-bg:#e4f0e0}
+body{font-family:'Times New Roman',Georgia,serif;background:var(--bg);color:var(--text);line-height:1.75}
+a{color:var(--accent);text-decoration:none;transition:color .2s}
+a:hover{color:var(--accent2)}
 
 /* NAV */
-nav{background:#1a1a1a;color:#fff;padding:0;position:sticky;top:0;z-index:100;border-bottom:3px solid var(--accent)}
-.nav-top{display:flex;align-items:center;justify-content:space-between;max-width:1100px;margin:0 auto;padding:8px 24px}
-.nav-brand{font-size:13px;letter-spacing:6px;font-weight:700;color:#fff;text-transform:uppercase}
+nav{background:var(--dark);color:#fff;position:sticky;top:0;z-index:100;border-bottom:2px solid var(--accent2)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:1060px;margin:0 auto;padding:10px 24px}
+.nav-brand{font-size:14px;letter-spacing:5px;font-weight:700;color:#fff;text-transform:uppercase}
 .nav-links{display:flex;gap:0}
-.nav-links a{color:#ccc;font-size:12px;padding:8px 16px;letter-spacing:1.5px;text-transform:uppercase;font-family:Arial,sans-serif;transition:all .2s}
+.nav-links a{color:#b0c8ac;font-size:12px;padding:10px 18px;letter-spacing:1.5px;text-transform:uppercase;font-family:Arial,Helvetica,sans-serif;transition:all .2s}
 .nav-links a:hover,.nav-links a.active{color:#fff;background:var(--accent);opacity:1}
-.nav-sub{background:#2a2a2a;text-align:center;padding:4px 0;font-size:11px;color:#999;font-family:Arial,sans-serif;letter-spacing:.5px}
 
 /* HERO */
-.hero{text-align:center;padding:60px 24px 50px;border-bottom:1px solid var(--border);background:linear-gradient(180deg,#f5f4f0 0%,var(--bg) 100%)}
-.hero-label{font-size:11px;letter-spacing:8px;text-transform:uppercase;color:var(--gray);font-family:Arial,sans-serif;margin-bottom:12px}
-.hero h1{font-size:72px;font-weight:900;letter-spacing:-1px;margin-bottom:8px;color:var(--accent)}
-.hero-sub{font-size:18px;font-style:italic;color:var(--gray);margin-bottom:24px;max-width:600px;margin-left:auto;margin-right:auto}
-.hero-meta{font-size:12px;color:#999;font-family:Arial,sans-serif;letter-spacing:2px;text-transform:uppercase}
-.hero-meta span{margin:0 12px}
+.hero{text-align:center;padding:56px 24px 48px;background:var(--hero-bg);border-bottom:1px solid var(--border);position:relative}
+.hero-label{font-size:11px;letter-spacing:6px;text-transform:uppercase;color:var(--gray);font-family:Arial,sans-serif;margin-bottom:16px}
+.hero h1{font-size:68px;font-weight:900;letter-spacing:-1px;margin-bottom:6px;color:var(--dark)}
+.hero-tagline{font-size:15px;letter-spacing:4px;text-transform:uppercase;font-family:Arial,sans-serif;color:var(--accent);margin-bottom:16px;font-weight:600}
+.hero-sub{font-size:16px;font-style:italic;color:var(--gray);margin-bottom:28px;max-width:620px;margin-left:auto;margin-right:auto;line-height:1.8}
+.hero-meta{font-size:12px;color:#7a9a76;font-family:Arial,sans-serif;letter-spacing:1.5px;text-transform:uppercase;display:flex;justify-content:center;gap:28px;flex-wrap:wrap}
 
-/* PAGE SECTIONS */
-.page{display:none;max-width:900px;margin:0 auto;padding:40px 24px 80px}
+/* PAGES */
+.page{display:none;max-width:860px;margin:0 auto;padding:44px 24px 80px}
 .page.active{display:block}
-.page h2{font-size:28px;margin-bottom:8px;color:var(--accent)}
-.page h3{font-size:20px;margin:30px 0 10px;color:var(--text)}
-.section-line{width:60px;height:3px;background:var(--accent);margin-bottom:24px}
+.page h2{font-size:26px;margin-bottom:8px;color:var(--dark)}
+.page h3{font-size:19px;margin:32px 0 10px;color:var(--dark)}
+.section-line{width:50px;height:3px;background:var(--accent2);margin-bottom:24px}
 .page p{margin-bottom:16px;text-align:justify}
 
-/* CURRENT ISSUE */
-.issue-banner{background:#1a1a1a;color:#fff;padding:20px 24px;margin-bottom:40px;display:flex;align-items:center;justify-content:space-between;max-width:900px;margin:40px auto 0}
-.issue-banner h3{font-size:14px;letter-spacing:3px;text-transform:uppercase;font-family:Arial,sans-serif}
-.issue-banner span{font-size:13px;color:#aaa;font-family:Arial,sans-serif}
+/* ANNOUNCEMENT BOX */
+.announce{max-width:860px;margin:36px auto 0;padding:0 24px}
+.announce-box{background:var(--card);border:1px solid var(--border);border-left:4px solid var(--accent2);padding:24px 28px}
+.announce-box h3{font-size:15px;font-family:Arial,sans-serif;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+.announce-box p{font-size:15px;color:var(--text);margin-bottom:8px}
+.announce-box a.btn{display:inline-block;margin-top:10px;margin-right:12px;padding:10px 28px;background:var(--accent);color:#fff;font-size:13px;letter-spacing:2px;text-transform:uppercase;font-family:Arial,sans-serif;transition:background .2s;border:none}
+.announce-box a.btn:hover{background:var(--accent2);color:#fff}
+.announce-box a.btn-outline{display:inline-block;margin-top:10px;padding:10px 28px;border:1.5px solid var(--accent);color:var(--accent);font-size:13px;letter-spacing:2px;text-transform:uppercase;font-family:Arial,sans-serif;transition:all .2s;background:transparent}
+.announce-box a.btn-outline:hover{background:var(--accent);color:#fff}
 
-/* ARTICLE CARDS */
-.articles{max-width:900px;margin:0 auto;padding:0 24px 80px}
-.article-card{border-bottom:1px solid var(--border);padding:32px 0;display:flex;gap:28px;align-items:flex-start}
-.article-card:last-child{border-bottom:none}
-.article-type{writing-mode:vertical-rl;text-orientation:mixed;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);font-family:Arial,sans-serif;flex-shrink:0;padding-top:4px}
-.article-body{flex:1}
-.article-body h4{font-size:20px;margin-bottom:6px;line-height:1.4;cursor:pointer;transition:color .2s}
-.article-body h4:hover{color:var(--accent)}
-.article-authors{font-size:14px;color:var(--gray);margin-bottom:10px;font-style:italic}
-.article-abstract{font-size:14px;color:#555;line-height:1.8;display:none}
-.article-abstract.open{display:block;margin-top:12px;padding:16px;background:#f8f7f4;border-left:3px solid var(--accent)}
-.article-meta{display:flex;gap:16px;margin-top:10px;font-size:11px;color:#999;font-family:Arial,sans-serif;text-transform:uppercase;letter-spacing:1px}
-.article-meta a{font-size:11px}
-.tag{background:var(--light);padding:2px 10px;font-size:11px;font-family:Arial,sans-serif;letter-spacing:1px;color:var(--gray)}
+/* ABOUT QUOTE */
+.about-quote{font-size:20px;font-style:italic;color:var(--gray);border-left:4px solid var(--accent2);padding:20px 28px;margin:28px 0;background:#edf5eb;line-height:1.8}
 
-/* EDITORIAL BOARD */
-.board-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:24px;margin-top:24px}
+/* STATS */
+.stat-row{display:flex;gap:24px;margin:28px 0;flex-wrap:wrap}
+.stat{text-align:center;flex:1;min-width:140px;background:var(--card);border:1px solid var(--border);padding:20px 12px}
+.stat-num{font-size:32px;font-weight:700;color:var(--accent)}
+.stat-label{font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:var(--gray);font-family:Arial,sans-serif;margin-top:4px}
+
+/* BOARD */
+.board-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:20px;margin-top:24px}
 .board-member{background:var(--card);border:1px solid var(--border);padding:24px;text-align:center;transition:transform .2s,box-shadow .2s}
-.board-member:hover{transform:translateY(-2px);box-shadow:0 4px 20px rgba(0,0,0,.08)}
-.member-avatar{width:80px;height:80px;border-radius:50%;background:var(--light);margin:0 auto 16px;display:flex;align-items:center;justify-content:center;font-size:28px;color:var(--accent);font-weight:700;border:2px solid var(--border)}
-.member-name{font-size:16px;font-weight:700;margin-bottom:2px}
-.member-title{font-size:12px;color:var(--accent);font-family:Arial,sans-serif;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+.board-member:hover{transform:translateY(-2px);box-shadow:0 4px 16px rgba(61,107,53,.1)}
+.member-avatar{width:72px;height:72px;border-radius:50%;background:var(--hero-bg);margin:0 auto 14px;display:flex;align-items:center;justify-content:center;font-size:26px;color:var(--accent);border:2px solid var(--border)}
+.member-name{font-size:15px;font-weight:700;margin-bottom:2px}
+.member-title{font-size:11px;color:var(--accent2);font-family:Arial,sans-serif;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px}
 .member-affil{font-size:13px;color:var(--gray);font-style:italic}
-.member-bio{font-size:12px;color:#888;margin-top:8px;line-height:1.6}
-
-/* ABOUT */
-.about-quote{font-size:22px;font-style:italic;color:var(--gray);border-left:4px solid var(--accent);padding:20px 28px;margin:28px 0;background:#f8f7f4}
-.stat-row{display:flex;gap:32px;margin:28px 0;flex-wrap:wrap}
-.stat{text-align:center;flex:1;min-width:120px}
-.stat-num{font-size:36px;font-weight:700;color:var(--accent)}
-.stat-label{font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--gray);font-family:Arial,sans-serif;margin-top:4px}
 
 /* CTA */
-.cta-box{background:#1a1a1a;color:#fff;padding:40px;text-align:center;margin:40px 0}
-.cta-box h3{font-size:22px;margin-bottom:12px}
-.cta-box p{color:#aaa;font-size:14px;max-width:500px;margin:0 auto 20px}
-.cta-btn{display:inline-block;padding:12px 36px;border:2px solid var(--accent);color:#fff;font-size:13px;letter-spacing:3px;text-transform:uppercase;font-family:Arial,sans-serif;transition:all .2s;cursor:pointer;background:transparent}
-.cta-btn:hover{background:var(--accent);color:#fff;opacity:1}
+.cta-box{background:var(--dark);color:#fff;padding:36px;text-align:center;margin:40px 0;border-left:4px solid var(--accent2)}
+.cta-box h3{font-size:20px;margin-bottom:10px}
+.cta-box p{color:#a0b89c;font-size:14px;max-width:540px;margin:0 auto 18px}
+.cta-btn{display:inline-block;padding:12px 32px;border:2px solid var(--accent2);color:#fff;font-size:13px;letter-spacing:2px;text-transform:uppercase;font-family:Arial,sans-serif;transition:all .2s;cursor:pointer;background:transparent;margin:4px 8px}
+.cta-btn:hover{background:var(--accent2);color:#fff}
+
+/* LINKS LIST */
+.link-list{margin:16px 0;padding:0;list-style:none}
+.link-list li{padding:12px 0;border-bottom:1px solid var(--border);font-size:15px}
+.link-list li:last-child{border-bottom:none}
+.link-list li a{font-weight:600}
+.link-list li span{display:block;font-size:13px;color:var(--gray);margin-top:2px}
 
 /* FOOTER */
-footer{background:#1a1a1a;color:#999;padding:32px 24px;text-align:center;font-size:12px;font-family:Arial,sans-serif;letter-spacing:1px;border-top:3px solid var(--accent)}
-footer .f-brand{font-size:18px;letter-spacing:8px;color:#fff;margin-bottom:8px}
-footer p{margin:4px 0}
+footer{background:var(--dark);color:#a0b89c;padding:28px 24px;text-align:center;font-size:12px;font-family:Arial,sans-serif;letter-spacing:1px;border-top:2px solid var(--accent2)}
+footer .f-brand{font-size:16px;letter-spacing:6px;color:#fff;margin-bottom:4px;font-family:'Times New Roman',Georgia,serif;font-weight:700}
+footer .f-tag{font-size:11px;color:var(--accent2);letter-spacing:2px;margin-bottom:10px}
+footer p{margin:3px 0}
+footer a{color:var(--accent2)}
+footer a:hover{color:#fff}
 
-/* RESPONSIVE */
 @media(max-width:640px){
   .hero h1{font-size:42px}
-  .article-card{flex-direction:column;gap:8px}
-  .article-type{writing-mode:horizontal-tb}
-  .nav-links a{padding:8px 10px;font-size:11px}
+  .hero-tagline{font-size:12px;letter-spacing:2px}
+  .hero-meta{flex-direction:column;gap:8px}
+  .nav-links a{padding:10px 12px;font-size:11px}
   .board-grid{grid-template-columns:1fr}
-  .stat-row{flex-direction:column;gap:16px}
+  .stat-row{flex-direction:column;gap:12px}
+  .announce-box a.btn,.announce-box a.btn-outline{display:block;text-align:center;margin-right:0}
 }
 </style>
 </head>
 <body>
 
 <nav>
-  <div class="nav-top">
+  <div class="nav-inner">
     <div class="nav-brand">Rubbish</div>
     <div class="nav-links">
       <a href="#" class="active" onclick="showPage('home',this)">Home</a>
       <a href="#" onclick="showPage('about',this)">About</a>
       <a href="#" onclick="showPage('board',this)">Editorial Board</a>
-      <a href="#" onclick="showPage('submit',this)">Submit</a>
+      <a href="#" onclick="showPage('submit',this)">For Authors</a>
     </div>
   </div>
-  <div class="nav-sub">Peer-Reviewed* &nbsp;|&nbsp; Open Access &nbsp;|&nbsp; Questionable Impact Factor</div>
 </nav>
 
 <!-- ========== HOME ========== -->
 <div id="home" class="page active">
   <div class="hero">
-    <div class="hero-label">Est. 2026 &middot; Berlin</div>
+    <div class="hero-label">Open Access &middot; Peer-Reviewed</div>
     <h1>RUBBISH</h1>
-    <div class="hero-sub">A Journal of Abandoned Scholarly Endeavours, Glorious Failures &amp; Questionable Methodologies</div>
+    <div class="hero-tagline">Journal of Waste &amp; Circular Economy</div>
+    <div class="hero-sub">An open-access, peer-reviewed journal dedicated to recycling academic work — including rejected manuscripts, failed experiments, null results, and abandoned drafts — into published scholarship.</div>
     <div class="hero-meta">
-      <span>ISSN: 0000-0000</span>
-      <span>Impact Factor: Immeasurable</span>
-      <span>Freq: Whenever</span>
+      <span>Impact Factor: 0</span>
+      <span>Frequency: Semiannual</span>
+      <span>Open Access</span>
     </div>
   </div>
 
-  <div class="issue-banner">
-    <h3>Current Issue &mdash; Vol. 1 No. 1 (2026)</h3>
-    <span>Published: February 2026</span>
-  </div>
-
-  <div class="articles">
-    <div class="article-card">
-      <div class="article-type">Research Article</div>
-      <div class="article-body">
-        <h4 onclick="toggleAbstract(this)">On the Impossibility of Finding a Parking Spot Near Campus: A 12-Year Longitudinal Study</h4>
-        <div class="article-authors">Zhang, W. &amp; Müller, K.</div>
-        <div class="article-abstract">This paper presents findings from a 12-year longitudinal study (2014–2026) investigating parking spot availability within a 500-meter radius of a mid-sized European university campus. Using a mixed-methods approach combining GPS tracking, frustration diaries, and satellite imagery, we demonstrate that the probability of finding a parking spot converges to zero during office hours. Our results were rejected by <em>Transportation Research Part A</em>, <em>Part B</em>, <em>Part C</em>, and <em>Part D</em>, which we interpret as further evidence of systemic institutional bias against uncomfortable truths. We dedicate this paper to our expired parking permits.</div>
-        <div class="article-meta">
-          <span>pp. 1–14</span>
-          <span class="tag">Urban Studies</span>
-          <a href="#">PDF ↓</a>
-          <a href="#" onclick="toggleAbstract(this.closest('.article-body').querySelector('h4'));return false">Abstract</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="article-type">Failed Experiment</div>
-      <div class="article-body">
-        <h4 onclick="toggleAbstract(this)">We Ran the Regression 47 Times and It Was Only Significant Once: A Confession</h4>
-        <div class="article-authors">Anonymous (but you know who you are)</div>
-        <div class="article-abstract">We present an honest account of a research project in which a linear regression model was re-estimated 47 times across various subsamples, variable transformations, and control configurations. Statistical significance at the p &lt; 0.05 level was achieved exactly once (Model 31, a Tuesday afternoon, after the third coffee). Rather than publishing only Model 31—as is customary—we provide the full set of results. We argue that this transparency, while career-ending, may contribute to the broader replication crisis discourse. The dataset is available upon request, though we would prefer you didn't look at it.</div>
-        <div class="article-meta">
-          <span>pp. 15–22</span>
-          <span class="tag">Methodology</span>
-          <a href="#">PDF ↓</a>
-          <a href="#" onclick="toggleAbstract(this.closest('.article-body').querySelector('h4'));return false">Abstract</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="article-type">Review Article</div>
-      <div class="article-body">
-        <h4 onclick="toggleAbstract(this)">Reviewer 2 Must Be Stopped: A Systematic Review of Unreasonable Peer Review Comments (2000–2025)</h4>
-        <div class="article-authors">International Consortium of Frustrated Academics (ICFA)</div>
-        <div class="article-abstract">Through systematic analysis of 3,200 anonymised peer review reports collected from researchers across 48 countries, this review identifies and taxonomises the most common categories of unhelpful feedback from the entity known as "Reviewer 2." Categories include: the Contradictory Demand ("expand the literature review but shorten the paper"), the Ego Citation ("the authors have neglected to cite [Reviewer 2's own paper]"), and the Philosophical Grenade ("but what even IS data?"). We propose a new framework—the Reviewer Unreasonableness Index (RUI)—and call for its adoption by all major publishers. This paper was, predictably, rejected after Reviewer 2 requested major revisions.</div>
-        <div class="article-meta">
-          <span>pp. 23–41</span>
-          <span class="tag">Meta-Science</span>
-          <a href="#">PDF ↓</a>
-          <a href="#" onclick="toggleAbstract(this.closest('.article-body').querySelector('h4'));return false">Abstract</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="article-type">Short Communication</div>
-      <div class="article-body">
-        <h4 onclick="toggleAbstract(this)">My Supervisor Said This Was "Interesting" and Then Never Mentioned It Again</h4>
-        <div class="article-authors">PhD Candidate #4,729 (name withheld for career preservation)</div>
-        <div class="article-abstract">This short communication documents the lifecycle of an academic idea from initial enthusiasm ("this could be a Nature paper!") to gradual neglect ("let's put a pin in that") to complete abandonment ("have you considered a different research question?"). Using autoethnographic methods and a corpus of 87 unanswered email follow-ups, we trace the phenomenon of Supervisory Interest Decay (SID) and propose that it follows an exponential distribution with a half-life of approximately 11 days. We note that our supervisor has not read this manuscript.</div>
-        <div class="article-meta">
-          <span>pp. 42–44</span>
-          <span class="tag">Academic Life</span>
-          <a href="#">PDF ↓</a>
-          <a href="#" onclick="toggleAbstract(this.closest('.article-body').querySelector('h4'));return false">Abstract</a>
-        </div>
-      </div>
+  <div class="announce">
+    <div class="announce-box">
+      <h3>Call for Papers — Vol. 1 No. 1 (2026)</h3>
+      <p>RUBBISH is now accepting submissions for its inaugural issue. We welcome research articles, failed experiments, rejected manuscripts, and short communications across all disciplines. Submissions in Chinese are encouraged.</p>
+      <a class="btn" href="https://mts-rubbish.github.io/" target="_blank">Submit Online →</a>
+      <a class="btn-outline" href="http://xhslink.com/o/3221RweISM2" target="_blank">Submission Template ↓</a>
     </div>
   </div>
 
-  <div style="max-width:900px;margin:0 auto;padding:0 24px 60px">
+  <div style="max-width:860px;margin:36px auto 0;padding:0 24px">
     <div class="cta-box">
-      <h3>Submit Your Rubbish</h3>
-      <p>Have a rejected manuscript, a failed experiment, or a half-formed idea you'll never finish? We want it. All of it.</p>
-      <a class="cta-btn" href="#" onclick="showPage('submit',document.querySelector('.nav-links a:nth-child(4)'));return false">Submit a Manuscript →</a>
+      <h3>Recycle Your Research</h3>
+      <p>Have a rejected manuscript, a failed experiment, or an unfinished draft? Submit it to RUBBISH — every piece of academic work deserves a second chance.</p>
+      <a class="cta-btn" href="https://mts-rubbish.github.io/" target="_blank">Online Submission System</a>
+      <a class="cta-btn" href="http://xhslink.com/o/3221RweISM2" target="_blank">Download Template</a>
     </div>
   </div>
 </div>
@@ -205,133 +148,117 @@ footer p{margin:4px 0}
   <h2>About the Journal</h2>
   <div class="section-line"></div>
 
-  <div class="about-quote">"In a world obsessed with impact factors and h-indices, RUBBISH dares to ask: what about everything else?"</div>
+  <div class="about-quote">"Just as the circular economy transforms waste into resources, RUBBISH transforms discarded academic work into published scholarship."</div>
 
   <h3>Aims &amp; Scope</h3>
-  <p><strong>RUBBISH: A Journal of Abandoned Scholarly Endeavours</strong> is a peer-reviewed*, open-access academic journal dedicated to the publication of work that the mainstream scholarly ecosystem has deemed unworthy, unfinished, or simply unfortunate.</p>
-  <p>We welcome submissions across all disciplines, including but not limited to: rejected manuscripts (the more rejection letters, the better), failed experiments and null results, half-written dissertations, conference papers that were never presented because the author overslept, literature reviews that went nowhere, and strongly worded responses to Reviewer 2 that were never sent.</p>
-  <p>RUBBISH operates on the principle that the academic dustbin is full of knowledge waiting to be rediscovered. We believe that failure is not the opposite of contribution—it is its most honest form.</p>
-  <p style="font-size:13px;color:#999;margin-top:20px">*Peer review at RUBBISH consists of at least one person reading the abstract and saying "yeah, that tracks."</p>
+  <p><strong>RUBBISH: Journal of Waste &amp; Circular Economy</strong> is an open-access, peer-reviewed academic journal that provides a publication platform for scholarly work that has been rejected, abandoned, or otherwise overlooked by the mainstream academic publishing ecosystem.</p>
+  <p>The journal is founded on the principle that knowledge production generates a significant volume of unpublished material — including null results, failed experiments, rejected manuscripts, and incomplete drafts — that nevertheless carries scholarly value. By providing a venue for such work, RUBBISH aims to reduce "academic waste" and promote a more transparent, inclusive model of scholarly communication.</p>
+  <p>We welcome submissions across all disciplines. Accepted article types include original research articles, reports of failed experiments and null results, previously rejected manuscripts, short communications, and methodological reflections.</p>
 
   <h3>Open Access Policy</h3>
-  <p>All content published in RUBBISH is freely available to anyone, anywhere, for any reason. We charge no Article Processing Charges (APCs) because, frankly, charging money for rubbish would be unethical. We operate on a budget of approximately €0 and good intentions.</p>
+  <p>All content published in RUBBISH is immediately and freely available to all readers worldwide. The journal charges no Article Processing Charges (APCs). We believe that open access to scholarly work — particularly work that has been excluded from conventional publication channels — is essential for the advancement of knowledge.</p>
+
+  <h3>Review Process</h3>
+  <p>All submissions are subject to editorial review. The editorial team evaluates manuscripts for scholarly integrity, clarity of presentation, and relevance to the journal's scope. Our review process is designed to be efficient and supportive, with a target turnaround time of 14 days from submission to initial decision.</p>
 
   <h3>Journal Metrics</h3>
   <div class="stat-row">
-    <div class="stat"><div class="stat-num">∞</div><div class="stat-label">Rejection Rate (of submissions to other journals)</div></div>
-    <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Acceptance Rate</div></div>
-    <div class="stat"><div class="stat-num">~0</div><div class="stat-label">Impact Factor</div></div>
-    <div class="stat"><div class="stat-num">24h</div><div class="stat-label">Review Turnaround</div></div>
+    <div class="stat"><div class="stat-num">0</div><div class="stat-label">Impact Factor</div></div>
+    <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Open Access</div></div>
+    <div class="stat"><div class="stat-num">14d</div><div class="stat-label">Review Turnaround</div></div>
+    <div class="stat"><div class="stat-num">€0</div><div class="stat-label">Publication Fee</div></div>
   </div>
 
-  <h3>Publication Ethics</h3>
-  <p>RUBBISH adheres to the highest standards of publication ethics, which is to say we have standards, and they are technically non-zero. We follow COPE guidelines to the extent that we have read the summary. Plagiarism is unacceptable; however, self-plagiarism from your own abandoned drafts is not only acceptable but encouraged. We do not fabricate data, although we acknowledge that some of our published data may have been fabricated by the original authors before they gave up on the project entirely.</p>
-
   <h3>Contact</h3>
-  <p>General inquiries: <strong>editors@rubbish-journal.org</strong><br>
-  Complaints: <strong>/dev/null</strong><br>
-  Praise: We accept all forms.</p>
+  <p>For editorial inquiries, please contact the editorial office at <strong>editors@rubbish-journal.org</strong>.</p>
+  <p>Follow us on Xiaohongshu (小红书): <a href="https://xhslink.com/m/t98VhsMirw" target="_blank"><strong>@Rubbish</strong></a></p>
 </div>
 
 <!-- ========== EDITORIAL BOARD ========== -->
 <div id="board" class="page">
   <h2>Editorial Board</h2>
   <div class="section-line"></div>
-  <p>Our editorial board consists of distinguished scholars united by one common trait: they all have at least one unpublishable manuscript in a drawer somewhere.</p>
+  <p>The editorial board of RUBBISH comprises scholars from diverse disciplinary backgrounds who share a commitment to broadening the scope of academic publication and reducing scholarly waste.</p>
 
   <div class="board-grid">
     <div class="board-member">
-      <div class="member-avatar">👑</div>
-      <div class="member-name">Prof. Dr. TBD</div>
-      <div class="member-title">Editor-in-Chief</div>
-      <div class="member-affil">University of Nowhere, Dept. of Abandoned Projects</div>
-      <div class="member-bio">Research interests: procrastination theory, the epistemology of "I'll finish it later," and deadline extension request optimization.</div>
+      <div class="member-avatar">E</div>
+      <div class="member-name">Dr. Elena Marks</div>
+      <div class="member-title">Co-Editor-in-Chief</div>
+      <div class="member-affil">Department of Research Communication</div>
     </div>
     <div class="board-member">
-      <div class="member-avatar">🗑️</div>
-      <div class="member-name">Dr. Jane Doe</div>
-      <div class="member-title">Associate Editor</div>
-      <div class="member-affil">Institute for Advanced Futility</div>
-      <div class="member-bio">Specialises in null results and has a personal collection of 23 rejection letters from a single journal.</div>
+      <div class="member-avatar">J</div>
+      <div class="member-name">Dr. James Reeves</div>
+      <div class="member-title">Co-Editor-in-Chief</div>
+      <div class="member-affil">Department of Quantitative Methods</div>
     </div>
     <div class="board-member">
-      <div class="member-avatar">📎</div>
-      <div class="member-name">Prof. Max Mustermann</div>
-      <div class="member-title">Methods Editor</div>
-      <div class="member-affil">Centre for Questionable Statistics</div>
-      <div class="member-bio">Pioneer of the "close enough" school of quantitative analysis. Author of <em>p-Values I Have Known and Loved</em>.</div>
-    </div>
-    <div class="board-member">
-      <div class="member-avatar">☕</div>
-      <div class="member-name">Dr. Café Latte</div>
-      <div class="member-title">Reviews Editor</div>
-      <div class="member-affil">International Bureau of Reviewer 2 Affairs</div>
-      <div class="member-bio">Dedicated to reforming the peer review system, or at least making it slightly less soul-crushing.</div>
-    </div>
-    <div class="board-member">
-      <div class="member-avatar">🌀</div>
-      <div class="member-name">Prof. Ouroboros Loop</div>
-      <div class="member-title">Circular Logic Editor</div>
-      <div class="member-affil">Recursive University of Recursion</div>
-      <div class="member-bio">Known for papers that cite themselves. Currently revising a revision of a revised manuscript.</div>
-    </div>
-    <div class="board-member">
-      <div class="member-avatar">🔥</div>
-      <div class="member-name">The Void</div>
-      <div class="member-title">Honorary Board Member</div>
-      <div class="member-affil">Where All Good Ideas Go</div>
-      <div class="member-bio">Has consumed more doctoral theses than any known entity. Accepts all submissions. Returns none.</div>
+      <div class="member-avatar">—</div>
+      <div class="member-name">Editorial Members</div>
+      <div class="member-title">Board Members</div>
+      <div class="member-affil">To be announced</div>
     </div>
   </div>
+
+  <p style="margin-top:32px;font-size:14px;color:var(--gray)">We are currently expanding our editorial board. Scholars interested in joining the board are welcome to contact us at <a href="mailto:editors@rubbish-journal.org">editors@rubbish-journal.org</a>.</p>
 </div>
 
-<!-- ========== SUBMIT ========== -->
+<!-- ========== FOR AUTHORS ========== -->
 <div id="submit" class="page">
-  <h2>Submit Your Manuscript</h2>
+  <h2>For Authors</h2>
   <div class="section-line"></div>
 
-  <p>RUBBISH welcomes submissions from scholars at all career stages, from undergraduate students who just discovered their entire thesis was based on a misunderstanding, to emeritus professors who finally want to publish that thing they've been sitting on since 1987.</p>
+  <h3>Submission Guidelines</h3>
+  <p>RUBBISH welcomes submissions from researchers at all career stages and across all disciplines. Manuscripts may be written in Chinese or English. We particularly encourage submissions in Chinese to promote multilingual scholarship.</p>
 
-  <h3>Submission Categories</h3>
-  <p><strong>Research Articles</strong> — Original research that didn't quite work out. Maximum 10,000 words, minimum effort acceptable.</p>
-  <p><strong>Failed Experiments</strong> — Detailed accounts of methodological disasters. The more catastrophic, the better.</p>
-  <p><strong>Rejected Manuscripts</strong> — Papers rejected elsewhere. Please include original rejection letters for our amusement and your catharsis.</p>
-  <p><strong>Short Communications</strong> — Brief reports of academic misadventures, including but not limited to: accidentally deleting datasets, presenting at the wrong conference, and discovering your control group was actually the treatment group.</p>
-  <p><strong>Letters to Reviewer 2</strong> — A dedicated space for correspondence you always wanted to send but never did.</p>
+  <h3>Article Types</h3>
+  <p><strong>Research Articles</strong> — Original research, including studies with null or negative results. No maximum word count.</p>
+  <p><strong>Failed Experiments</strong> — Structured reports documenting experimental approaches that did not produce expected outcomes, with emphasis on methodological lessons.</p>
+  <p><strong>Rejected Manuscripts</strong> — Papers that have been rejected by other venues. Authors are encouraged to include a brief reflection on the review process.</p>
+  <p><strong>Short Communications</strong> — Brief reports, including preliminary findings, methodological notes, and reflections on academic practice.</p>
 
-  <h3>Formatting Guidelines</h3>
-  <p>We accept manuscripts in any format, including but not limited to: PDF, Word, LaTeX, napkin scans, voice memos transcribed by a sleep-deprived PhD student, and PowerPoint slides from a talk you gave in 2019 that "could totally be a paper." We recommend Times New Roman 12pt because we are traditionalists, but we won't reject Comic Sans—we don't reject anything.</p>
+  <h3>How to Submit</h3>
+  <p>Submissions should be prepared using the journal's manuscript template and submitted through our online submission system.</p>
+  <ul class="link-list">
+    <li>
+      <a href="http://xhslink.com/o/3221RweISM2" target="_blank">Download Submission Template</a>
+      <span>Formatting template for manuscript preparation (via Xiaohongshu)</span>
+    </li>
+    <li>
+      <a href="https://mts-rubbish.github.io/" target="_blank">Online Submission System</a>
+      <span>Submit your manuscript through our online portal</span>
+    </li>
+  </ul>
 
   <h3>Review Process</h3>
-  <p>All submissions undergo a rigorous review process consisting of: (1) an editor reads the title, (2) the editor checks that the PDF opens, and (3) the editor confirms the author has not accidentally submitted their grocery list (although, if sufficiently annotated, grocery lists may be considered under our Short Communications category). Typical turnaround time is 24 hours, because life is too short to wait 9 months for a desk rejection.</p>
+  <p>All submitted manuscripts undergo editorial review. The editorial team assesses each submission for scholarly integrity, clarity, and alignment with the journal's scope. Authors will receive an initial decision within approximately 14 days of submission. RUBBISH operates a supportive review process; our goal is to help authors improve and publish their work, not to serve as an additional gatekeeping mechanism.</p>
+
+  <h3>Publication Ethics</h3>
+  <p>RUBBISH is committed to upholding standards of publication ethics. Plagiarism, data fabrication, and data falsification are not acceptable. Authors submitting previously rejected manuscripts must confirm that the work is their own and has not been published elsewhere. The journal follows the general principles outlined by the Committee on Publication Ethics (COPE).</p>
 
   <div class="cta-box" style="margin-top:40px">
     <h3>Ready to Submit?</h3>
-    <p>Send your manuscript to the address below. Include "SUBMISSION" in the subject line, or don't. We'll figure it out.</p>
-    <p style="color:#fff;font-size:18px;margin:16px 0">submissions@rubbish-journal.org</p>
-    <p style="color:#666;font-size:12px">Current acceptance rate: 100% &nbsp;|&nbsp; Average review time: Less time than it takes to microwave a burrito</p>
+    <p>Prepare your manuscript using our template, then submit through the online system.</p>
+    <a class="cta-btn" href="https://mts-rubbish.github.io/" target="_blank">Submit Now</a>
   </div>
 </div>
 
 <footer>
-  <div class="f-brand">R U B B I S H</div>
-  <p>© 2026 RUBBISH: A Journal of Abandoned Scholarly Endeavours</p>
-  <p style="margin-top:8px">ISSN: 0000-0000 &nbsp;|&nbsp; Published Somewhere in the Internet</p>
-  <p style="margin-top:4px;color:#666">Not affiliated with any accredited institution. Not indexed anywhere. Not sorry.</p>
+  <div class="f-brand">RUBBISH</div>
+  <div class="f-tag">JOURNAL OF WASTE &amp; CIRCULAR ECONOMY</div>
+  <p>© 2026 Rubbish Journal. All rights reserved.</p>
+  <p style="margin-top:6px">Open Access &middot; Peer-Reviewed &middot; Impact Factor: 0</p>
+  <p style="margin-top:8px"><a href="https://xhslink.com/m/t98VhsMirw" target="_blank">Xiaohongshu @Rubbish</a> &nbsp;|&nbsp; <a href="mailto:editors@rubbish-journal.org">Contact</a></p>
 </footer>
 
 <script>
-function showPage(id, el) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+function showPage(id,el){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   document.getElementById(id).classList.add('active');
-  document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
-  if (el) el.classList.add('active');
-  window.scrollTo({top: 0, behavior: 'smooth'});
-}
-
-function toggleAbstract(el) {
-  const abs = el.closest('.article-body').querySelector('.article-abstract');
-  abs.classList.toggle('open');
+  document.querySelectorAll('.nav-links a').forEach(a=>a.classList.remove('active'));
+  if(el)el.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
 }
 </script>
 </body>
